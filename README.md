@@ -1,0 +1,2 @@
+# baidumapapi_getdistance
+通过百度地图的接口获取两地之间的距离，并打包成可执行exe文件
