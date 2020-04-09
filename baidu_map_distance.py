@@ -30,6 +30,7 @@ def getPosition(myaddress):
 
 #获取两地距离，这里我们获取的是步行距离，其他距离参考官方文档
 def getdistance(startlat,startlng,endlat,endlng):
+    #{: .6f}保留小数点后六位
     distanceurl=r"http://api.map.baidu.com/directionlite/v1/walking?origin={:.6f},{:.6f}&destination={:.6f},{:.6f}&ak={}".format(startlat,startlng,endlat,endlng,myAK)
     res = requests.get(distanceurl)
     dis_json_data = json.loads(res.text)
@@ -67,7 +68,7 @@ def get_address(file_path):
 
 
 if __name__=='__main__':
-    myAK = 'k0X6nDCdVPqMy3EkbVZWkXHzxlN7jtxM'
+    myAK = '你的AK'
     file_path, parent_path=get_filename()
     get_address(file_path)
     print('已完成，请查看结果文件')
